@@ -15,8 +15,6 @@
  */
 package com.baomidou.mybatisplus.annotation;
 
-import lombok.Getter;
-
 /**
  * <p>
  * 生成ID类型枚举类
@@ -25,7 +23,7 @@ import lombok.Getter;
  * @author hubin
  * @since 2015-11-10
  */
-@Getter
+
 public enum IdType {
     /**
      * 数据库ID自增
@@ -58,6 +56,14 @@ public enum IdType {
     private int key;
 
     IdType(int key) {
+        this.key = key;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
         this.key = key;
     }
 }

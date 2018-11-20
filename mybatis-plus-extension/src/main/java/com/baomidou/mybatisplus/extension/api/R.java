@@ -21,9 +21,6 @@ import java.util.Optional;
 import com.baomidou.mybatisplus.extension.enums.ApiErrorCode;
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 /**
  * <p>
  * REST API 返回结果
@@ -32,8 +29,6 @@ import lombok.experimental.Accessors;
  * @author hubin
  * @since 2018-06-05
  */
-@Data
-@Accessors(chain = true)
 public class R<T> implements Serializable {
 
     /**
@@ -95,5 +90,29 @@ public class R<T> implements Serializable {
             throw new ApiException(this.msg);
         }
         return data;
+    }
+
+    public long getCode() {
+        return code;
+    }
+
+    public void setCode(long code) {
+        this.code = code;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

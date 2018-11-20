@@ -30,9 +30,6 @@ import org.apache.ibatis.reflection.SystemMetaObject;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.RowBounds;
 import com.baomidou.mybatisplus.extension.handlers.AbstractSqlParserHandler;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -43,9 +40,6 @@ import lombok.experimental.Accessors;
  * @author hubin
  * @since 2016-08-16
  */
-@EqualsAndHashCode(callSuper = true)
-@Data
-@Accessors(chain = true)
 @Intercepts({@Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})})
 public class SqlExplainInterceptor extends AbstractSqlParserHandler implements Interceptor {
 
@@ -76,5 +70,9 @@ public class SqlExplainInterceptor extends AbstractSqlParserHandler implements I
     @Override
     public void setProperties(Properties prop) {
         this.properties = prop;
+    }
+
+    public Properties getProperties() {
+        return properties;
     }
 }

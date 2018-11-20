@@ -21,8 +21,6 @@ import com.baomidou.mybatisplus.core.parser.SqlInfo;
 import com.baomidou.mybatisplus.core.parser.SqlParserHelper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
-import lombok.Data;
-import lombok.experimental.Accessors;
 import org.apache.ibatis.reflection.MetaObject;
 
 import java.util.List;
@@ -35,8 +33,6 @@ import java.util.List;
  * @author hubin
  * @since 2016-08-31
  */
-@Data
-@Accessors(chain = true)
 public abstract class AbstractSqlParserHandler {
 
     private List<ISqlParser> sqlParserList;
@@ -71,5 +67,21 @@ public abstract class AbstractSqlParserHandler {
                 }
             }
         }
+    }
+
+    public List<ISqlParser> getSqlParserList() {
+        return sqlParserList;
+    }
+
+    public void setSqlParserList(List<ISqlParser> sqlParserList) {
+        this.sqlParserList = sqlParserList;
+    }
+
+    public ISqlParserFilter getSqlParserFilter() {
+        return sqlParserFilter;
+    }
+
+    public void setSqlParserFilter(ISqlParserFilter sqlParserFilter) {
+        this.sqlParserFilter = sqlParserFilter;
     }
 }

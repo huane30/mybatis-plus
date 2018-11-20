@@ -22,8 +22,6 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.TableInfoHelper;
 import com.baomidou.mybatisplus.core.toolkit.sql.SqlScriptUtils;
 import com.baomidou.mybatisplus.core.toolkit.sql.SqlUtils;
-import lombok.AccessLevel;
-import lombok.Getter;
 
 import java.lang.reflect.Field;
 
@@ -35,7 +33,6 @@ import java.lang.reflect.Field;
  * @author hubin sjy willenfoo tantan
  * @since 2016-09-09
  */
-@Getter
 public class TableFieldInfo {
 
     /**
@@ -99,7 +96,6 @@ public class TableFieldInfo {
     /**
      * 缓存 sql select
      */
-    @Getter(AccessLevel.NONE)
     private String sqlSelect;
 
     /**
@@ -321,5 +317,125 @@ public class TableFieldInfo {
                 false);
         }
         return SqlScriptUtils.convertIf(sqlScript, String.format("%s != null", property), false);
+    }
+
+    public boolean isRelated() {
+        return related;
+    }
+
+    public void setRelated(boolean related) {
+        this.related = related;
+    }
+
+    public boolean isSelect() {
+        return select;
+    }
+
+    public void setSelect(boolean select) {
+        this.select = select;
+    }
+
+    public String getColumn() {
+        return column;
+    }
+
+    public void setColumn(String column) {
+        this.column = column;
+    }
+
+    public String getProperty() {
+        return property;
+    }
+
+    public void setProperty(String property) {
+        this.property = property;
+    }
+
+    public String getEl() {
+        return el;
+    }
+
+    public void setEl(String el) {
+        this.el = el;
+    }
+
+    public Class<?> getPropertyType() {
+        return propertyType;
+    }
+
+    public void setPropertyType(Class<?> propertyType) {
+        this.propertyType = propertyType;
+    }
+
+    public boolean isCharSequence() {
+        return isCharSequence;
+    }
+
+    public void setCharSequence(boolean charSequence) {
+        isCharSequence = charSequence;
+    }
+
+    public FieldStrategy getFieldStrategy() {
+        return fieldStrategy;
+    }
+
+    public void setFieldStrategy(FieldStrategy fieldStrategy) {
+        this.fieldStrategy = fieldStrategy;
+    }
+
+    public String getLogicDeleteValue() {
+        return logicDeleteValue;
+    }
+
+    public void setLogicDeleteValue(String logicDeleteValue) {
+        this.logicDeleteValue = logicDeleteValue;
+    }
+
+    public String getLogicNotDeleteValue() {
+        return logicNotDeleteValue;
+    }
+
+    public void setLogicNotDeleteValue(String logicNotDeleteValue) {
+        this.logicNotDeleteValue = logicNotDeleteValue;
+    }
+
+    public String getUpdate() {
+        return update;
+    }
+
+    public void setUpdate(String update) {
+        this.update = update;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
+    public FieldFill getFieldFill() {
+        return fieldFill;
+    }
+
+    public void setFieldFill(FieldFill fieldFill) {
+        this.fieldFill = fieldFill;
+    }
+
+    public Class<?> getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Class<?> clazz) {
+        this.clazz = clazz;
+    }
+
+    public String getSqlSelect() {
+        return sqlSelect;
+    }
+
+    public void setSqlSelect(String sqlSelect) {
+        this.sqlSelect = sqlSelect;
     }
 }

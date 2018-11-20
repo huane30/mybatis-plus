@@ -15,7 +15,6 @@
  */
 package com.baomidou.mybatisplus.annotation;
 
-import lombok.Getter;
 
 /**
  * <p>
@@ -25,7 +24,6 @@ import lombok.Getter;
  * @author hubin
  * @since 2018-06-23
  */
-@Getter
 public enum DbType {
     /**
      * MYSQL
@@ -111,5 +109,17 @@ public enum DbType {
             }
         }
         return OTHER;
+    }
+
+    public String getDb() {
+        return db;
+    }
+
+    public String getLike() {
+        return like;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 }

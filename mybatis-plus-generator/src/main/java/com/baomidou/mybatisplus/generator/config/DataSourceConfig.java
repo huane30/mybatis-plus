@@ -33,9 +33,6 @@ import com.baomidou.mybatisplus.generator.config.querys.OracleQuery;
 import com.baomidou.mybatisplus.generator.config.querys.PostgreSqlQuery;
 import com.baomidou.mybatisplus.generator.config.querys.SqlServerQuery;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 /**
  * <p>
  * 数据库配置
@@ -44,8 +41,6 @@ import lombok.experimental.Accessors;
  * @author YangHu
  * @since 2016/8/30
  */
-@Data
-@Accessors(chain = true)
 public class DataSourceConfig {
 
     /**
@@ -173,5 +168,57 @@ public class DataSourceConfig {
             e.printStackTrace();
         }
         return conn;
+    }
+
+    public void setDbQuery(IDbQuery dbQuery) {
+        this.dbQuery = dbQuery;
+    }
+
+    public void setDbType(DbType dbType) {
+        this.dbType = dbType;
+    }
+
+    public String getSchemaName() {
+        return schemaName;
+    }
+
+    public void setSchemaName(String schemaName) {
+        this.schemaName = schemaName;
+    }
+
+    public void setTypeConvert(ITypeConvert typeConvert) {
+        this.typeConvert = typeConvert;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getDriverName() {
+        return driverName;
+    }
+
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -22,9 +22,6 @@ import com.baomidou.mybatisplus.generator.config.FileOutConfig;
 import com.baomidou.mybatisplus.generator.config.IFileCreate;
 import com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 /**
  * <p>
  * 抽象的对外接口
@@ -33,8 +30,6 @@ import lombok.experimental.Accessors;
  * @author hubin
  * @since 2016-12-07
  */
-@Data
-@Accessors(chain = true)
 public abstract class InjectionConfig {
 
     /**
@@ -61,4 +56,36 @@ public abstract class InjectionConfig {
      * 注入自定义 Map 对象
      */
     public abstract void initMap();
+
+    public ConfigBuilder getConfig() {
+        return config;
+    }
+
+    public void setConfig(ConfigBuilder config) {
+        this.config = config;
+    }
+
+    public Map<String, Object> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<String, Object> map) {
+        this.map = map;
+    }
+
+    public List<FileOutConfig> getFileOutConfigList() {
+        return fileOutConfigList;
+    }
+
+    public void setFileOutConfigList(List<FileOutConfig> fileOutConfigList) {
+        this.fileOutConfigList = fileOutConfigList;
+    }
+
+    public IFileCreate getFileCreate() {
+        return fileCreate;
+    }
+
+    public void setFileCreate(IFileCreate fileCreate) {
+        this.fileCreate = fileCreate;
+    }
 }

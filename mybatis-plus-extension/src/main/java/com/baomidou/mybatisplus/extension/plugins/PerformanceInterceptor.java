@@ -46,10 +46,6 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.SystemClock;
 import com.baomidou.mybatisplus.core.toolkit.sql.SqlUtils;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
-
 /**
  * <p>
  * 性能分析拦截器，用于输出每条 SQL 语句及其执行时间
@@ -72,25 +68,16 @@ public class PerformanceInterceptor implements Interceptor {
     /**
      * SQL 执行最大时长，超过自动停止运行，有助于发现问题。
      */
-    @Setter
-    @Getter
-    @Accessors(chain = true)
     private long maxTime = 0;
     /**
      * SQL 是否格式化
      */
-    @Setter
-    @Getter
-    @Accessors(chain = true)
     private boolean format = false;
     /**
      * 是否写入日志文件<br>
      * true 写入日志文件，不阻断程序执行！<br>
      * 超过设定的最大执行时长异常提示！
      */
-    @Setter
-    @Getter
-    @Accessors(chain = true)
     private boolean writeInLog = false;
     private Method oracleGetOriginalSqlMethod;
     private Method druidGetSQLMethod;
@@ -256,5 +243,57 @@ public class PerformanceInterceptor implements Interceptor {
         List<Integer> list = new ArrayList<>(set);
         list.sort(Comparator.naturalOrder());
         return list.get(0);
+    }
+
+    public static String getDruidPooledPreparedStatement() {
+        return DruidPooledPreparedStatement;
+    }
+
+    public static String getT4CPreparedStatement() {
+        return T4CPreparedStatement;
+    }
+
+    public static String getOraclePreparedStatementWrapper() {
+        return OraclePreparedStatementWrapper;
+    }
+
+    public long getMaxTime() {
+        return maxTime;
+    }
+
+    public void setMaxTime(long maxTime) {
+        this.maxTime = maxTime;
+    }
+
+    public boolean isFormat() {
+        return format;
+    }
+
+    public void setFormat(boolean format) {
+        this.format = format;
+    }
+
+    public boolean isWriteInLog() {
+        return writeInLog;
+    }
+
+    public void setWriteInLog(boolean writeInLog) {
+        this.writeInLog = writeInLog;
+    }
+
+    public Method getOracleGetOriginalSqlMethod() {
+        return oracleGetOriginalSqlMethod;
+    }
+
+    public void setOracleGetOriginalSqlMethod(Method oracleGetOriginalSqlMethod) {
+        this.oracleGetOriginalSqlMethod = oracleGetOriginalSqlMethod;
+    }
+
+    public Method getDruidGetSQLMethod() {
+        return druidGetSQLMethod;
+    }
+
+    public void setDruidGetSQLMethod(Method druidGetSQLMethod) {
+        this.druidGetSQLMethod = druidGetSQLMethod;
     }
 }

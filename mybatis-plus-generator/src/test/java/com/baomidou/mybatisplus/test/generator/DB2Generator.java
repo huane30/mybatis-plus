@@ -20,11 +20,11 @@ public class DB2Generator {
         GlobalConfig config = new GlobalConfig();
         String dbUrl = "jdbc:db2://192.168.0.227:50000/TRADECTR";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
-        dataSourceConfig.setDbType(DbType.DB2)
-            .setUrl(dbUrl)
-            .setUsername("tc")
-            .setPassword("business")
-            .setDriverName("com.ibm.db2.jcc.DB2Driver");
+        dataSourceConfig.setDbType(DbType.DB2);
+        dataSourceConfig.setUrl(dbUrl);
+        dataSourceConfig.setUsername("tc");
+        dataSourceConfig.setPassword("business");
+        dataSourceConfig.setDriverName("com.ibm.db2.jcc.DB2Driver");
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig
             .setCapitalMode(true)
@@ -34,26 +34,27 @@ public class DB2Generator {
             .setColumnNaming(NamingStrategy.underline_to_camel)
             .entityTableFieldAnnotationEnable(true)//实体属性上添加表字段映射
             .setInclude(tableNames);//修改替换成你需要的表名，多个表名传数组
-        config.setActiveRecord(true)
-            .setEnableCache(false)// XML 二级缓存
-            .setAuthor("zhanyao")
-            .setBaseResultMap(true)// XML ResultMap
-            .setBaseColumnList(false)// XML columList
-            .setOutputDir("/Users/zhanyao/Downloads/code")
-            .setFileOverride(true);
+        config.setActiveRecord(true);
+        config.setEnableCache(false);// XML 二级缓存
+        config.setAuthor("zhanyao");
+        config.setBaseResultMap(true);// XML ResultMap
+        config.setBaseColumnList(false);// XML columList
+        config.setOutputDir("/Users/zhanyao/Downloads/code");
+        config.setFileOverride(true);
         if (!serviceNameStartWithI) {
             config.setServiceName("%sService");
         }
-        new AutoGenerator().setGlobalConfig(config)
-            .setDataSource(dataSourceConfig)
-            .setStrategy(strategyConfig)
-            .setPackageInfo(
-                new PackageConfig()
-                    .setParent(packageName)
-                    .setController("controller")
-                    .setMapper("dao")
-                    .setEntity("bean")
-            ).execute();
+        PackageConfig packageConfig = new PackageConfig();
+        packageConfig.setParent(packageName);
+        packageConfig.setController("controller");
+        packageConfig.setMapper("dao");
+        packageConfig.setEntity("bean");
+        AutoGenerator autoGenerator =new AutoGenerator();
+        autoGenerator.setGlobalConfig(config);
+        autoGenerator.setDataSource(dataSourceConfig);
+        autoGenerator.setStrategy(strategyConfig);
+        autoGenerator.setPackageInfo(packageConfig);
+        autoGenerator.execute();
     }
 
     private void generateByTables(String packageName, String... tableNames) {

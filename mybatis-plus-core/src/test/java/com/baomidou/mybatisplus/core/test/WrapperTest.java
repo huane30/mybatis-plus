@@ -204,17 +204,4 @@ public class WrapperTest {
         return map;
     }
 
-//    public void test() {
-//        String sql = new QueryWrapper()
-//            .where("b.age > 18", condition ->
-//                condition.and("b.type = 'rabid'")
-//                    .or(nested -> nested.apply("name='12'").and("age=1"))
-//                    .notIn("ads,2112,212")
-//                    .last("LIMIT 1")
-//            ).sqlSegment();
-//
-//        log(sql);
-//        assertEquals("WHERE b.age > 18 AND b.type = 'rabid' OR ( name='12' AND age=1 ) NOT IN ( ads,2112,212 ) LIMIT 1", sql);
-//    }
-
 }

@@ -73,7 +73,9 @@ public class GlobalConfigUtils {
      * </p>
      */
     public static GlobalConfig defaults() {
-        return new GlobalConfig().setDbConfig(new GlobalConfig.DbConfig());
+        GlobalConfig globalConfig = new GlobalConfig();
+        globalConfig.setDbConfig(new GlobalConfig.DbConfig());
+        return globalConfig;
     }
 
     /**

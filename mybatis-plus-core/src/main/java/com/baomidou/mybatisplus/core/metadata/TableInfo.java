@@ -24,10 +24,6 @@ import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.sql.SqlScriptUtils;
 import com.baomidou.mybatisplus.core.toolkit.sql.SqlUtils;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
-import lombok.experimental.Accessors;
 import org.apache.ibatis.session.Configuration;
 
 import java.util.List;
@@ -42,8 +38,6 @@ import static java.util.stream.Collectors.joining;
  * @author hubin
  * @since 2016-01-23
  */
-@Data
-@Accessors(chain = true)
 public class TableInfo {
 
     /**
@@ -106,12 +100,10 @@ public class TableInfo {
     /**
      * 缓存包含主键及字段的 sql select
      */
-    @Setter(AccessLevel.NONE)
     private String allSqlSelect;
     /**
      * 缓存主键字段的 sql select
      */
-    @Setter(AccessLevel.NONE)
     private String sqlSelect;
 
     /**
@@ -306,5 +298,125 @@ public class TableInfo {
             return logicDeleteSql;
         }
         return StringPool.EMPTY;
+    }
+
+    public IdType getIdType() {
+        return idType;
+    }
+
+    public void setIdType(IdType idType) {
+        this.idType = idType;
+    }
+
+    public DbType getDbType() {
+        return dbType;
+    }
+
+    public void setDbType(DbType dbType) {
+        this.dbType = dbType;
+    }
+
+    public String getTableName() {
+        return tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    public String getResultMap() {
+        return resultMap;
+    }
+
+    public void setResultMap(String resultMap) {
+        this.resultMap = resultMap;
+    }
+
+    public boolean isKeyRelated() {
+        return keyRelated;
+    }
+
+    public void setKeyRelated(boolean keyRelated) {
+        this.keyRelated = keyRelated;
+    }
+
+    public String getKeyProperty() {
+        return keyProperty;
+    }
+
+    public void setKeyProperty(String keyProperty) {
+        this.keyProperty = keyProperty;
+    }
+
+    public String getKeyColumn() {
+        return keyColumn;
+    }
+
+    public void setKeyColumn(String keyColumn) {
+        this.keyColumn = keyColumn;
+    }
+
+    public KeySequence getKeySequence() {
+        return keySequence;
+    }
+
+    public void setKeySequence(KeySequence keySequence) {
+        this.keySequence = keySequence;
+    }
+
+    public List<TableFieldInfo> getFieldList() {
+        return fieldList;
+    }
+
+    public void setFieldList(List<TableFieldInfo> fieldList) {
+        this.fieldList = fieldList;
+    }
+
+    public String getCurrentNamespace() {
+        return currentNamespace;
+    }
+
+    public void setCurrentNamespace(String currentNamespace) {
+        this.currentNamespace = currentNamespace;
+    }
+
+    public String getConfigMark() {
+        return configMark;
+    }
+
+    public void setConfigMark(String configMark) {
+        this.configMark = configMark;
+    }
+
+    public boolean isLogicDelete() {
+        return logicDelete;
+    }
+
+    public boolean isUnderCamel() {
+        return underCamel;
+    }
+
+    public void setUnderCamel(boolean underCamel) {
+        this.underCamel = underCamel;
+    }
+
+    public Class<?> getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Class<?> clazz) {
+        this.clazz = clazz;
+    }
+
+    public void setAllSqlSelect(String allSqlSelect) {
+        this.allSqlSelect = allSqlSelect;
+    }
+
+    public String getSqlSelect() {
+        return sqlSelect;
+    }
+
+    public void setSqlSelect(String sqlSelect) {
+        this.sqlSelect = sqlSelect;
     }
 }

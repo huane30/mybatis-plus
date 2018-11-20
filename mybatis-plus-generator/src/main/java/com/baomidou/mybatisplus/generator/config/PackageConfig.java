@@ -21,9 +21,6 @@ import java.util.Map;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 /**
  * <p>
  * 跟包相关的配置项
@@ -31,9 +28,6 @@ import lombok.experimental.Accessors;
  * @author YangHu, tangguo, hubin
  * @since 2016-08-30
  */
-
-@Data
-@Accessors(chain = true)
 public class PackageConfig {
 
     /**
@@ -87,4 +81,71 @@ public class PackageConfig {
         return parent;
     }
 
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
+
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
+
+    public String getEntity() {
+        return entity;
+    }
+
+    public void setEntity(String entity) {
+        this.entity = entity;
+    }
+
+    public String getService() {
+        return service;
+    }
+
+    public void setService(String service) {
+        this.service = service;
+    }
+
+    public String getServiceImpl() {
+        return serviceImpl;
+    }
+
+    public void setServiceImpl(String serviceImpl) {
+        this.serviceImpl = serviceImpl;
+    }
+
+    public String getMapper() {
+        return mapper;
+    }
+
+    public void setMapper(String mapper) {
+        this.mapper = mapper;
+    }
+
+    public String getXml() {
+        return xml;
+    }
+
+    public void setXml(String xml) {
+        this.xml = xml;
+    }
+
+    public String getController() {
+        return controller;
+    }
+
+    public void setController(String controller) {
+        this.controller = controller;
+    }
+
+    public Map<String, String> getPathInfo() {
+        return pathInfo;
+    }
+
+    public void setPathInfo(Map<String, String> pathInfo) {
+        this.pathInfo = pathInfo;
+    }
 }

@@ -22,9 +22,6 @@ import com.baomidou.mybatisplus.core.toolkit.Assert;
 import com.baomidou.mybatisplus.core.toolkit.ExceptionUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 import net.sf.jsqlparser.expression.BinaryExpression;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
@@ -57,9 +54,6 @@ import net.sf.jsqlparser.statement.update.Update;
  * @author hubin
  * @since 2017-09-01
  */
-@Data
-@Accessors(chain = true)
-@EqualsAndHashCode(callSuper = true)
 public class TenantSqlParser extends AbstractJsqlParser {
 
     private TenantHandler tenantHandler;
@@ -288,5 +282,13 @@ public class TenantSqlParser extends AbstractJsqlParser {
         column.append(StringPool.DOT);
         column.append(tenantHandler.getTenantIdColumn());
         return new Column(column.toString());
+    }
+
+    public TenantHandler getTenantHandler() {
+        return tenantHandler;
+    }
+
+    public void setTenantHandler(TenantHandler tenantHandler) {
+        this.tenantHandler = tenantHandler;
     }
 }

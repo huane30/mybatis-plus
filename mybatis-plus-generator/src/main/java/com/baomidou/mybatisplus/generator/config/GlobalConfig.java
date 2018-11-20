@@ -18,9 +18,6 @@ package com.baomidou.mybatisplus.generator.config;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 /**
  * <p>
  * 全局配置
@@ -29,8 +26,7 @@ import lombok.experimental.Accessors;
  * @author hubin
  * @since 2016-12-02
  */
-@Data
-@Accessors(chain = true)
+
 public class GlobalConfig {
 
     /**
@@ -100,4 +96,148 @@ public class GlobalConfig {
      * 指定生成的主键的ID类型
      */
     private IdType idType;
+
+    public String getOutputDir() {
+        return outputDir;
+    }
+
+    public void setOutputDir(String outputDir) {
+        this.outputDir = outputDir;
+    }
+
+    public boolean isFileOverride() {
+        return fileOverride;
+    }
+
+    public void setFileOverride(boolean fileOverride) {
+        this.fileOverride = fileOverride;
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
+
+    public boolean isEnableCache() {
+        return enableCache;
+    }
+
+    public void setEnableCache(boolean enableCache) {
+        this.enableCache = enableCache;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public boolean isKotlin() {
+        return kotlin;
+    }
+
+    public void setKotlin(boolean kotlin) {
+        this.kotlin = kotlin;
+    }
+
+    public boolean isSwagger2() {
+        return swagger2;
+    }
+
+    public void setSwagger2(boolean swagger2) {
+        this.swagger2 = swagger2;
+    }
+
+    public boolean isActiveRecord() {
+        return activeRecord;
+    }
+
+    public void setActiveRecord(boolean activeRecord) {
+        this.activeRecord = activeRecord;
+    }
+
+    public boolean isBaseResultMap() {
+        return baseResultMap;
+    }
+
+    public void setBaseResultMap(boolean baseResultMap) {
+        this.baseResultMap = baseResultMap;
+    }
+
+    public DateType getDateType() {
+        return dateType;
+    }
+
+    public void setDateType(DateType dateType) {
+        this.dateType = dateType;
+    }
+
+    public boolean isBaseColumnList() {
+        return baseColumnList;
+    }
+
+    public void setBaseColumnList(boolean baseColumnList) {
+        this.baseColumnList = baseColumnList;
+    }
+
+    public String getEntityName() {
+        return entityName;
+    }
+
+    public void setEntityName(String entityName) {
+        this.entityName = entityName;
+    }
+
+    public String getMapperName() {
+        return mapperName;
+    }
+
+    public void setMapperName(String mapperName) {
+        this.mapperName = mapperName;
+    }
+
+    public String getXmlName() {
+        return xmlName;
+    }
+
+    public void setXmlName(String xmlName) {
+        this.xmlName = xmlName;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    public String getServiceImplName() {
+        return serviceImplName;
+    }
+
+    public void setServiceImplName(String serviceImplName) {
+        this.serviceImplName = serviceImplName;
+    }
+
+    public String getControllerName() {
+        return controllerName;
+    }
+
+    public void setControllerName(String controllerName) {
+        this.controllerName = controllerName;
+    }
+
+    public IdType getIdType() {
+        return idType;
+    }
+
+    public void setIdType(IdType idType) {
+        this.idType = idType;
+    }
 }

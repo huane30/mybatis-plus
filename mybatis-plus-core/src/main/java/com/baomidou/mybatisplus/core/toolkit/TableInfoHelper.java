@@ -333,10 +333,11 @@ public class TableInfoHelper {
                         column = column.toUpperCase();
                     }
                 }
-                tableInfo.setKeyRelated(checkRelated(underCamel, field.getName(), column))
-                    .setClazz(field.getDeclaringClass())
-                    .setKeyColumn(column)
-                    .setKeyProperty(field.getName());
+
+                tableInfo.setKeyRelated(checkRelated(underCamel, field.getName(), column));
+                tableInfo.setClazz(field.getDeclaringClass());
+                tableInfo.setKeyColumn(column);
+                tableInfo.setKeyProperty(field.getName());
                 return true;
             } else {
                 throwExceptionId(clazz);
@@ -363,11 +364,11 @@ public class TableInfoHelper {
         }
         if (DEFAULT_ID_NAME.equalsIgnoreCase(column)) {
             if (StringUtils.isEmpty(tableInfo.getKeyColumn())) {
-                tableInfo.setKeyRelated(checkRelated(tableInfo.isUnderCamel(), field.getName(), column))
-                    .setIdType(dbConfig.getIdType())
-                    .setKeyColumn(column)
-                    .setKeyProperty(field.getName())
-                    .setClazz(field.getDeclaringClass());
+                tableInfo.setKeyRelated(checkRelated(tableInfo.isUnderCamel(), field.getName(), column));
+                tableInfo.setIdType(dbConfig.getIdType());
+                tableInfo.setKeyColumn(column);
+                tableInfo.setKeyProperty(field.getName());
+                tableInfo.setClazz(field.getDeclaringClass());
                 return true;
             } else {
                 throwExceptionId(clazz);

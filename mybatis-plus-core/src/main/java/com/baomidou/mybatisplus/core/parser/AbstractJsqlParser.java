@@ -72,7 +72,9 @@ public abstract class AbstractJsqlParser implements ISqlParser {
                     }
                 }
                 if (sqlStringBuilder.length() > 0) {
-                    return SqlInfo.newInstance().setSql(sqlStringBuilder.toString());
+                    SqlInfo sqlInfo = SqlInfo.newInstance();
+                    sqlInfo.setSql(sqlStringBuilder.toString());
+                    return sqlInfo;
                 }
             } catch (JSQLParserException e) {
                 throw ExceptionUtils.mpe("Failed to process, please exclude the tableName or statementId.\n Error SQL: " + sql, e);
@@ -100,7 +102,9 @@ public abstract class AbstractJsqlParser implements ISqlParser {
             this.processDelete((Delete) statement);
         }
         logger.debug("parser sql: " + statement.toString());
-        return SqlInfo.newInstance().setSql(statement.toString());
+        SqlInfo sqlInfo= SqlInfo.newInstance();
+        sqlInfo.setSql(statement.toString());
+        return sqlInfo;
     }
 
     /**

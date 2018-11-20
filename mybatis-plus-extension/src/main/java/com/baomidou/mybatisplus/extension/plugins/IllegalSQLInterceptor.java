@@ -33,7 +33,6 @@ import com.baomidou.mybatisplus.core.toolkit.EncryptUtils;
 import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 
-import lombok.Data;
 import net.sf.jsqlparser.expression.BinaryExpression;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.Function;
@@ -350,7 +349,6 @@ public class IllegalSQLInterceptor implements Interceptor {
     /**
      * 索引对象
      */
-    @Data
     private static class IndexInfo {
 
         private String dbName;
@@ -358,5 +356,42 @@ public class IllegalSQLInterceptor implements Interceptor {
         private String tableName;
 
         private String columnName;
+
+        public String getDbName() {
+            return dbName;
+        }
+
+        public void setDbName(String dbName) {
+            this.dbName = dbName;
+        }
+
+        public String getTableName() {
+            return tableName;
+        }
+
+        public void setTableName(String tableName) {
+            this.tableName = tableName;
+        }
+
+        public String getColumnName() {
+            return columnName;
+        }
+
+        public void setColumnName(String columnName) {
+            this.columnName = columnName;
+        }
+    }
+
+    public static Set<String> getCacheValidResult() {
+        return cacheValidResult;
+    }
+
+
+    public static Map<String, List<IndexInfo>> getIndexInfoMap() {
+        return indexInfoMap;
+    }
+
+    public static void setIndexInfoMap(Map<String, List<IndexInfo>> indexInfoMap) {
+        IllegalSQLInterceptor.indexInfoMap = indexInfoMap;
     }
 }

@@ -19,7 +19,6 @@ package com.baomidou.mybatisplus.core.toolkit.support;
 import com.baomidou.mybatisplus.core.toolkit.ExceptionUtils;
 import com.baomidou.mybatisplus.core.toolkit.SerializationUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
-import lombok.Getter;
 
 import java.io.*;
 
@@ -32,7 +31,6 @@ import java.io.*;
  * @author HCL
  * @since 2018/05/10
  */
-@Getter
 public class SerializedLambda implements Serializable {
 
     private static final long serialVersionUID = 8025925345765570181L;
@@ -73,5 +71,85 @@ public class SerializedLambda implements Serializable {
         return super.toString() +
             implClass.replace(StringPool.SLASH, StringPool.DOT) +
             StringPool.HASH + implMethodName;
+    }
+
+    public Class<?> getCapturingClass() {
+        return capturingClass;
+    }
+
+    public void setCapturingClass(Class<?> capturingClass) {
+        this.capturingClass = capturingClass;
+    }
+
+    public String getFunctionalInterfaceClass() {
+        return functionalInterfaceClass;
+    }
+
+    public void setFunctionalInterfaceClass(String functionalInterfaceClass) {
+        this.functionalInterfaceClass = functionalInterfaceClass;
+    }
+
+    public String getFunctionalInterfaceMethodName() {
+        return functionalInterfaceMethodName;
+    }
+
+    public void setFunctionalInterfaceMethodName(String functionalInterfaceMethodName) {
+        this.functionalInterfaceMethodName = functionalInterfaceMethodName;
+    }
+
+    public String getFunctionalInterfaceMethodSignature() {
+        return functionalInterfaceMethodSignature;
+    }
+
+    public void setFunctionalInterfaceMethodSignature(String functionalInterfaceMethodSignature) {
+        this.functionalInterfaceMethodSignature = functionalInterfaceMethodSignature;
+    }
+
+    public String getImplClass() {
+        return implClass;
+    }
+
+    public void setImplClass(String implClass) {
+        this.implClass = implClass;
+    }
+
+    public String getImplMethodName() {
+        return implMethodName;
+    }
+
+    public void setImplMethodName(String implMethodName) {
+        this.implMethodName = implMethodName;
+    }
+
+    public String getImplMethodSignature() {
+        return implMethodSignature;
+    }
+
+    public void setImplMethodSignature(String implMethodSignature) {
+        this.implMethodSignature = implMethodSignature;
+    }
+
+    public int getImplMethodKind() {
+        return implMethodKind;
+    }
+
+    public void setImplMethodKind(int implMethodKind) {
+        this.implMethodKind = implMethodKind;
+    }
+
+    public String getInstantiatedMethodType() {
+        return instantiatedMethodType;
+    }
+
+    public void setInstantiatedMethodType(String instantiatedMethodType) {
+        this.instantiatedMethodType = instantiatedMethodType;
+    }
+
+    public Object[] getCapturedArgs() {
+        return capturedArgs;
+    }
+
+    public void setCapturedArgs(Object[] capturedArgs) {
+        this.capturedArgs = capturedArgs;
     }
 }

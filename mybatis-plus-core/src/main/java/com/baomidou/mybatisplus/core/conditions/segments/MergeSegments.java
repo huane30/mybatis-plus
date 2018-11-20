@@ -21,8 +21,6 @@ import java.util.List;
 import com.baomidou.mybatisplus.core.conditions.ISqlSegment;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 
-import lombok.Getter;
-
 /**
  * <p>
  * 合并 SQL 片段
@@ -31,7 +29,6 @@ import lombok.Getter;
  * @author miemie
  * @since 2018-06-27
  */
-@Getter
 @SuppressWarnings("serial")
 public class MergeSegments implements ISqlSegment {
 
@@ -67,4 +64,35 @@ public class MergeSegments implements ISqlSegment {
         }
     }
 
+    public NormalSegmentList getNormal() {
+        return normal;
+    }
+
+    public void setNormal(NormalSegmentList normal) {
+        this.normal = normal;
+    }
+
+    public GroupBySegmentList getGroupBy() {
+        return groupBy;
+    }
+
+    public void setGroupBy(GroupBySegmentList groupBy) {
+        this.groupBy = groupBy;
+    }
+
+    public HavingSegmentList getHaving() {
+        return having;
+    }
+
+    public void setHaving(HavingSegmentList having) {
+        this.having = having;
+    }
+
+    public OrderBySegmentList getOrderBy() {
+        return orderBy;
+    }
+
+    public void setOrderBy(OrderBySegmentList orderBy) {
+        this.orderBy = orderBy;
+    }
 }

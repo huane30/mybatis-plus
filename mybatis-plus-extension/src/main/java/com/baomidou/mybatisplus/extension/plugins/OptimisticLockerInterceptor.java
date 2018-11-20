@@ -32,8 +32,6 @@ import com.baomidou.mybatisplus.core.toolkit.ReflectionKit;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.TableInfoHelper;
 
-import lombok.Data;
-
 /**
  * <p>
  * Optimistic Lock Light version<BR>
@@ -295,7 +293,6 @@ public class OptimisticLockerInterceptor implements Interceptor {
         return fieldList;
     }
 
-    @Data
     private class EntityField {
 
         EntityField(Field field, boolean version) {
@@ -313,5 +310,36 @@ public class OptimisticLockerInterceptor implements Interceptor {
         private boolean version;
         private String columnName;
 
+        public Field getField() {
+            return field;
+        }
+
+        public void setField(Field field) {
+            this.field = field;
+        }
+
+        public boolean isVersion() {
+            return version;
+        }
+
+        public void setVersion(boolean version) {
+            this.version = version;
+        }
+
+        public String getColumnName() {
+            return columnName;
+        }
+
+        public void setColumnName(String columnName) {
+            this.columnName = columnName;
+        }
+    }
+
+    public Map<Class<?>, EntityField> getVersionFieldCache() {
+        return versionFieldCache;
+    }
+
+    public Map<Class<?>, List<EntityField>> getEntityFieldsCache() {
+        return entityFieldsCache;
     }
 }

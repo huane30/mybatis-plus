@@ -53,9 +53,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.DialectFactory;
 import com.baomidou.mybatisplus.extension.toolkit.JdbcUtils;
 import com.baomidou.mybatisplus.extension.toolkit.SqlParserUtils;
 
-import lombok.Setter;
-import lombok.experimental.Accessors;
-
 /**
  * <p>
  * 分页拦截器
@@ -64,8 +61,6 @@ import lombok.experimental.Accessors;
  * @author hubin
  * @since 2016-01-23
  */
-@Setter
-@Accessors(chain = true)
 @Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class, Integer.class})})
 public class PaginationInterceptor extends AbstractSqlParserHandler implements Interceptor {
 

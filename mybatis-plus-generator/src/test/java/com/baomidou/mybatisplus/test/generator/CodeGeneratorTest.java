@@ -78,11 +78,11 @@ public class CodeGeneratorTest {
         GlobalConfig config = new GlobalConfig();
         String dbUrl = "jdbc:mysql://localhost:3306/mybatis-plus";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
-        dataSourceConfig.setDbType(DbType.MYSQL)
-            .setUrl(dbUrl)
-            .setUsername("root")
-            .setPassword("")
-            .setDriverName("com.mysql.jdbc.Driver");
+        dataSourceConfig.setDbType(DbType.MYSQL);
+        dataSourceConfig.setUrl(dbUrl);
+        dataSourceConfig.setUsername("root");
+        dataSourceConfig.setPassword("");
+        dataSourceConfig.setDriverName("com.mysql.jdbc.Driver");
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig
             .setCapitalMode(true)
@@ -93,22 +93,23 @@ public class CodeGeneratorTest {
             .entityTableFieldAnnotationEnable(enableTableFieldAnnotation)
             .setFieldPrefix(fieldPrefix)//test_id -> id, test_type -> type
             .setInclude(tableNames);//修改替换成你需要的表名，多个表名传数组
-        config.setActiveRecord(false)
-            .setIdType(tableIdType)
-            .setAuthor("K神带你飞")
-            .setOutputDir("d:\\codeGen")
-            .setFileOverride(true);
+        config.setActiveRecord(false);
+        config.setIdType(tableIdType);
+        config.setAuthor("K神带你飞");
+        config.setOutputDir("d:\\codeGen");
+        config.setFileOverride(true);
         if (!serviceClassNameStartWithI) {
             config.setServiceName("%sService");
         }
-        new AutoGenerator().setGlobalConfig(config)
-            .setDataSource(dataSourceConfig)
-            .setStrategy(strategyConfig)
-            .setPackageInfo(
-                new PackageConfig()
-                    .setParent(packageName)
-                    .setController("controller")
-                    .setEntity("entity")
-            ).execute();
+        PackageConfig packageConfig = new PackageConfig();
+        packageConfig.setParent(packageName);
+        packageConfig.setController("controller");
+        packageConfig.setEntity("entity");
+        AutoGenerator autoGenerator =new AutoGenerator();
+        autoGenerator.setGlobalConfig(config);
+        autoGenerator.setDataSource(dataSourceConfig);
+        autoGenerator.setStrategy(strategyConfig);
+        autoGenerator.setPackageInfo(packageConfig);
+        autoGenerator.execute();
     }
 }
