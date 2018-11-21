@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sooner</groupId>
   <artifactId>sooner-jdbc-extension</artifactId>
-  <version>3.0.1</version>
+  <version>3.0.2-SNAPSHOT</version>
 
     <properties>
         <java.version>1.8</java.version>
@@ -14,7 +14,7 @@
     <dependency>
       <groupId>com.sooner</groupId>
       <artifactId>sooner-jdbc-core</artifactId>
-      <version>3.0.1</version>
+      <version>3.0.2-SNAPSHOT</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
@@ -26,7 +26,7 @@
     <dependency>
       <groupId>com.sooner</groupId>
       <artifactId>sooner-jdbc-annotation</artifactId>
-      <version>3.0.1</version>
+      <version>3.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.mybatis</groupId>

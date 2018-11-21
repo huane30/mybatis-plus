@@ -22,7 +22,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
  * @author Eddú Meléndez
  * @author Kazuki Shimizu
  */
-@ConfigurationProperties(prefix = "mybatis-plus")
+@ConfigurationProperties(prefix = "sooner-jdbc")
 public class MybatisPlusProperties {
 
     private static final ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();

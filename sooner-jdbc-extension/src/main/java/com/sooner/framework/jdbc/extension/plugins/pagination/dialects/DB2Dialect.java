@@ -56,7 +56,7 @@ public class DB2Dialect implements IDialect {
         pagingSelect.append(" ) as temp_ where rownumber_ ");
 
         // 20180829 modify by hepengju
-        // https://github.com/sooner/mybatis-plus/issues/450
+        // https://github.com/sooner/sooner/issues/450
         if (offset > 0) {
             String endString = offset + StringPool.PLUS + limit;
             pagingSelect.append(" fetch first ").append(endString).append(" rows only) as temp_ where rownumber_ ")

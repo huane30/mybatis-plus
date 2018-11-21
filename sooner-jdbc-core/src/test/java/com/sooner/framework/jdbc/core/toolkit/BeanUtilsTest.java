@@ -6,8 +6,6 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * 测试 bean utils
@@ -39,12 +37,26 @@ public class BeanUtilsTest {
     /**
      * 自定义实体类用于测试
      */
-    @Getter
-    @Setter
     public static class User {
 
         private String name;
         private int id;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
     }
 
 }

@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sooner</groupId>
   <artifactId>sooner-jdbc-core</artifactId>
-  <version>3.0.1</version>
+  <version>3.0.2-SNAPSHOT</version>
 
     <properties>
         <java.version>1.8</java.version>
@@ -14,7 +14,7 @@
     <dependency>
       <groupId>com.sooner</groupId>
       <artifactId>sooner-jdbc-annotation</artifactId>
-      <version>3.0.1</version>
+      <version>3.0.2-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -29,12 +29,12 @@
       <version>1.2</version>
       <scope>compile</scope>
     </dependency>
-    <dependency>
+    <!--<dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.16.20</version>
       <scope>test</scope>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>cglib</groupId>
       <artifactId>cglib</artifactId>

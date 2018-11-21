@@ -1,6 +1,6 @@
 /**
  * <p>
- * 只放mybatis-plus核心代码，不涉及数据库，不添加spring等
+ * 只放sooner核心代码，不涉及数据库，不添加spring等
  * </p>
  *
  * @author yuxiaobin

@@ -2,7 +2,6 @@ package com.sooner.framework.jdbc.core.toolkit;
 
 import com.sooner.framework.jdbc.core.toolkit.support.Property;
 import com.sooner.framework.jdbc.core.toolkit.support.SerializedLambda;
-import lombok.Getter;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -30,10 +29,18 @@ public class LambdaUtilsTest {
         }};
     }
 
-    @Getter
     private class TestPojo {
 
         private int id;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
     }
 
     public class Cond<T> {

@@ -64,7 +64,7 @@ public class SQLServerGenerator extends GeneratorTest {
         dsc.setDriverName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         dsc.setUsername("sa");
         dsc.setPassword("nieqiuqiu");
-        dsc.setUrl("jdbc:sqlserver://192.168.1.105:1433;databaseName=mybatis-plus");
+        dsc.setUrl("jdbc:sqlserver://192.168.1.105:1433;databaseName=sooner");
         mpg.setDataSource(dsc);
 
         // 策略配置
@@ -103,16 +103,7 @@ public class SQLServerGenerator extends GeneratorTest {
         cfg.setFileOutConfigList(focList);
         mpg.setCfg(cfg);
 
-        // 自定义模板配置，模板可以参考源码 /mybatis-plus/src/main/resources/template 使用 copy
-        // 至您项目 src/main/resources/template 目录下，模板名称也可自定义如下配置：
-        // TemplateConfig tc = new TemplateConfig();
-        // tc.setController("...");
-        // tc.setEntity("...");
-        // tc.setMapper("...");
-        // tc.setXml("...");
-        // tc.setService("...");
-        // tc.setServiceImpl("...");
-        // mpg.setTemplate(tc);
+
         // 执行生成
         if (1 == result) {
             mpg.setTemplateEngine(new FreemarkerTemplateEngine());

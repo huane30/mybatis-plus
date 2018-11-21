@@ -2,8 +2,6 @@ package com.sooner.framework.jdbc.core.toolkit.condition;
 
 import org.junit.Test;
 
-import lombok.Getter;
-
 public class WrapperTest {
 
     @Test
@@ -13,9 +11,16 @@ public class WrapperTest {
         System.out.println(wrapper.getSqlSeq());
     }
 
-    @Getter
     private class User {
 
         private int id;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
     }
 }

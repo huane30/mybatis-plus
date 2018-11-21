@@ -70,7 +70,7 @@ public class PostgreSQLGenerator extends GeneratorTest {
         dsc.setDriverName("org.postgresql.Driver");
         dsc.setUsername("postgres");
         dsc.setPassword("521");
-        dsc.setUrl("jdbc:postgresql://localhost:5432/mybatis-plus");
+        dsc.setUrl("jdbc:postgresql://localhost:5432/sooner");
         mpg.setDataSource(dsc);
 
         // 策略配置
@@ -110,17 +110,6 @@ public class PostgreSQLGenerator extends GeneratorTest {
         });
         cfg.setFileOutConfigList(focList);
         mpg.setCfg(cfg);
-
-        // 自定义模板配置，模板可以参考源码 /mybatis-plus/src/main/resources/template 使用 copy
-        // 至您项目 src/main/resources/template 目录下，模板名称也可自定义如下配置：
-        // TemplateConfig tc = new TemplateConfig();
-        // tc.setController("...");
-        // tc.setEntity("...");
-        // tc.setMapper("...");
-        // tc.setXml("...");
-        // tc.setService("...");
-        // tc.setServiceImpl("...");
-        // mpg.setTemplate(tc);
 
         // 执行生成
         if (1 == result) {

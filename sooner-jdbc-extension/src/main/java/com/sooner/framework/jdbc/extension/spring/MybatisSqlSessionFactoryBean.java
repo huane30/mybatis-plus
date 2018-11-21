@@ -218,7 +218,7 @@ public class MybatisSqlSessionFactoryBean implements FactoryBean<SqlSessionFacto
 
     /**
      * 支持 typeAliasesPackage 多项每项都有通配符 com.a.b.*.po, com.c.*.po
-     * ISSUE https://gitee.com/sooner/mybatis-plus/issues/IKJ48
+     * ISSUE https://gitee.com/sooner/sooner/issues/IKJ48
      */
     public void setTypeAliasesPackage(String typeAliasesPackage) {
         this.typeAliasesPackage = typeAliasesPackage;

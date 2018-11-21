@@ -179,7 +179,7 @@ public class MybatisMapperRefresh implements Runnable {
 
                     } while (true);
                 }
-            }, "mybatis-plus MapperRefresh").start();
+            }, "sooner MapperRefresh").start();
         }
     }
 

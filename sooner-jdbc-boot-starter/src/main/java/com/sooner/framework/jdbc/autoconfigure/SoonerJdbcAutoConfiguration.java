@@ -1,6 +1,5 @@
 package com.sooner.framework.jdbc.autoconfigure;
 
-
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -71,9 +70,9 @@ import com.sooner.framework.jdbc.extension.spring.MybatisSqlSessionFactoryBean;
 @ConditionalOnSingleCandidate(DataSource.class)
 @EnableConfigurationProperties(MybatisPlusProperties.class)
 @AutoConfigureAfter(DataSourceAutoConfiguration.class)
-public class MybatisPlusAutoConfiguration {
+public class SoonerJdbcAutoConfiguration {
 
-    private static final Logger logger = LoggerFactory.getLogger(MybatisPlusAutoConfiguration.class);
+    private static final Logger logger = LoggerFactory.getLogger(SoonerJdbcAutoConfiguration.class);
 
     private final MybatisPlusProperties properties;
 
@@ -87,12 +86,12 @@ public class MybatisPlusAutoConfiguration {
 
     private final ApplicationContext applicationContext;
 
-    public MybatisPlusAutoConfiguration(MybatisPlusProperties properties,
-                                        ObjectProvider<Interceptor[]> interceptorsProvider,
-                                        ResourceLoader resourceLoader,
-                                        ObjectProvider<DatabaseIdProvider> databaseIdProvider,
-                                        ObjectProvider<List<ConfigurationCustomizer>> configurationCustomizersProvider,
-                                        ApplicationContext applicationContext) {
+    public SoonerJdbcAutoConfiguration(MybatisPlusProperties properties,
+                                       ObjectProvider<Interceptor[]> interceptorsProvider,
+                                       ResourceLoader resourceLoader,
+                                       ObjectProvider<DatabaseIdProvider> databaseIdProvider,
+                                       ObjectProvider<List<ConfigurationCustomizer>> configurationCustomizersProvider,
+                                       ApplicationContext applicationContext) {
         this.properties = properties;
         this.interceptors = interceptorsProvider.getIfAvailable();
         this.resourceLoader = resourceLoader;
